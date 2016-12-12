@@ -21,6 +21,7 @@ int splitPoint = cropW / 2;
 
 boolean moviePaused = false; boolean movieMuted = false;
 boolean showText = true; String fileName = "no file";
+String videoDir = "c:/temp";
 boolean adjustCropXY = true;
 CornerPinSurface activeSurface; 
 int activeCorner;
@@ -42,7 +43,7 @@ void setup() {
   activeSurface = surfaceL;
   activeCorner = activeSurface.TL;
   
-  dir = new File("c:/temp");
+  dir = new File(videoDir);
   files = dir.listFiles(new FilenameFilter() {
     public boolean accept(File dir, String name) {
         return name.toLowerCase().endsWith(".mp4");
